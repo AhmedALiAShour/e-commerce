@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		E2FEDAE520E42668006F9944 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDAE420E42668006F9944 /* AppDelegate.swift */; };
-		E2FEDAE720E42668006F9944 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDAE620E42668006F9944 /* ViewController.swift */; };
+		E2FEDAE720E42668006F9944 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDAE620E42668006F9944 /* CategoriesVC.swift */; };
 		E2FEDAEA20E42668006F9944 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FEDAE820E42668006F9944 /* Main.storyboard */; };
 		E2FEDAED20E42668006F9944 /* e_commerce.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDAEB20E42668006F9944 /* e_commerce.xcdatamodeld */; };
 		E2FEDAEF20E42668006F9944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2FEDAEE20E42668006F9944 /* Assets.xcassets */; };
 		E2FEDAF220E42668006F9944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2FEDAF020E42668006F9944 /* LaunchScreen.storyboard */; };
+		E2FEDAFD20E42D14006F9944 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDAFC20E42D14006F9944 /* CategoryCell.swift */; };
+		E2FEDAFF20E42FC8006F9944 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDAFE20E42FC8006F9944 /* Category.swift */; };
+		E2FEDB0220E43214006F9944 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDB0120E43214006F9944 /* DataService.swift */; };
+		E2FEDB0420E4721C006F9944 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDB0320E4721C006F9944 /* ProductCell.swift */; };
+		E2FEDB0620E473D2006F9944 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDB0520E473D2006F9944 /* Product.swift */; };
+		E2FEDB0820E4793C006F9944 /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FEDB0720E4793C006F9944 /* ProductsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E2FEDAE120E42668006F9944 /* e-commerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "e-commerce.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2FEDAE420E42668006F9944 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2FEDAE620E42668006F9944 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E2FEDAE620E42668006F9944 /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
 		E2FEDAE920E42668006F9944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2FEDAEC20E42668006F9944 /* e_commerce.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = e_commerce.xcdatamodel; sourceTree = "<group>"; };
 		E2FEDAEE20E42668006F9944 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2FEDAF120E42668006F9944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2FEDAF320E42668006F9944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FEDAFC20E42D14006F9944 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		E2FEDAFE20E42FC8006F9944 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E2FEDB0120E43214006F9944 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		E2FEDB0320E4721C006F9944 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		E2FEDB0520E473D2006F9944 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E2FEDB0720E4793C006F9944 /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +68,11 @@
 		E2FEDAE320E42668006F9944 /* e-commerce */ = {
 			isa = PBXGroup;
 			children = (
+				E2FEDB0020E431E6006F9944 /* Services */,
+				E2FEDAFB20E427BC006F9944 /* Controller */,
+				E2FEDAFA20E427AB006F9944 /* Model */,
+				E2FEDAF920E427A1006F9944 /* View */,
 				E2FEDAE420E42668006F9944 /* AppDelegate.swift */,
-				E2FEDAE620E42668006F9944 /* ViewController.swift */,
 				E2FEDAE820E42668006F9944 /* Main.storyboard */,
 				E2FEDAEE20E42668006F9944 /* Assets.xcassets */,
 				E2FEDAF020E42668006F9944 /* LaunchScreen.storyboard */,
@@ -65,6 +80,41 @@
 				E2FEDAEB20E42668006F9944 /* e_commerce.xcdatamodeld */,
 			);
 			path = "e-commerce";
+			sourceTree = "<group>";
+		};
+		E2FEDAF920E427A1006F9944 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2FEDAFC20E42D14006F9944 /* CategoryCell.swift */,
+				E2FEDB0320E4721C006F9944 /* ProductCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2FEDAFA20E427AB006F9944 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2FEDAFE20E42FC8006F9944 /* Category.swift */,
+				E2FEDB0520E473D2006F9944 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2FEDAFB20E427BC006F9944 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E2FEDAE620E42668006F9944 /* CategoriesVC.swift */,
+				E2FEDB0720E4793C006F9944 /* ProductsVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E2FEDB0020E431E6006F9944 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E2FEDB0120E43214006F9944 /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +189,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2FEDAE720E42668006F9944 /* ViewController.swift in Sources */,
+				E2FEDAE720E42668006F9944 /* CategoriesVC.swift in Sources */,
+				E2FEDB0620E473D2006F9944 /* Product.swift in Sources */,
+				E2FEDAFF20E42FC8006F9944 /* Category.swift in Sources */,
 				E2FEDAED20E42668006F9944 /* e_commerce.xcdatamodeld in Sources */,
+				E2FEDB0220E43214006F9944 /* DataService.swift in Sources */,
 				E2FEDAE520E42668006F9944 /* AppDelegate.swift in Sources */,
+				E2FEDB0420E4721C006F9944 /* ProductCell.swift in Sources */,
+				E2FEDAFD20E42D14006F9944 /* CategoryCell.swift in Sources */,
+				E2FEDB0820E4793C006F9944 /* ProductsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
