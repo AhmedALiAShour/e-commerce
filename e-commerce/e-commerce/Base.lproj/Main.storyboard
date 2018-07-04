@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +21,7 @@
         <!--E-COMMERCE-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CategoriesVC" customModule="e_commerce" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesVC" id="BYZ-38-t0r" customClass="CategoriesVC" customModule="e_commerce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +47,7 @@
                                                     <rect key="frame" x="0.0" y="10" width="375" height="140"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHIRTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5S-UV-wWj">
-                                                    <rect key="frame" x="153.5" y="66" width="67.5" height="28"/>
+                                                    <rect key="frame" x="154" y="66" width="67" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27.5" id="VyL-fr-E8d"/>
                                                     </constraints>
@@ -75,15 +76,59 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1lX-km-imJ"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Oq-3P-tO7">
+                                <rect key="frame" x="275" y="-5" width="100" height="30"/>
+                                <color key="backgroundColor" red="0.48300386261818973" green="0.24337244656627097" blue="0.24819499551568663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="8lZ-8y-HBU"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="NavigateLoginView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xLO-Uy-Yhr"/>
+                                </connections>
+                            </button>
+                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-HI-4qK">
+                                <rect key="frame" x="254.5" y="-5" width="120.5" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bH-wB-dQ0">
+                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="30"/>
+                                        <color key="backgroundColor" red="0.3411764706" green="0.1529411765" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cgf-dz-le1"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-o2-A2w">
+                                        <rect key="frame" x="0.0" y="-59" width="120.5" height="0.0"/>
+                                        <color key="backgroundColor" red="0.64546023950355325" green="0.39493720903564811" blue="0.39807674054913939" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Logout">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="LogoutAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Roq-mE-DpW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="8Oq-3P-tO7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="2GG-zz-QQT"/>
                             <constraint firstItem="1VZ-Lf-4AK" firstAttribute="top" secondItem="8f0-Dt-FTS" secondAttribute="bottom" constant="16" id="2Tc-uc-LXw"/>
                             <constraint firstItem="1VZ-Lf-4AK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2Zh-q4-4d1"/>
                             <constraint firstItem="1VZ-Lf-4AK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3rI-Xb-a2u"/>
+                            <constraint firstItem="pzo-HI-4qK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="D8e-lW-4wm"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8f0-Dt-FTS" secondAttribute="trailing" constant="20" symbolic="YES" id="EnR-9l-4bv"/>
+                            <constraint firstItem="pzo-HI-4qK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="16:80" id="LyC-28-RKL"/>
+                            <constraint firstItem="8Oq-3P-tO7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ntp-wL-qSt"/>
                             <constraint firstItem="1VZ-Lf-4AK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eg6-WZ-Pv1"/>
                             <constraint firstItem="8f0-Dt-FTS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="gAt-EQ-JOy"/>
+                            <constraint firstItem="8Oq-3P-tO7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-5" id="n0D-cd-wH0"/>
+                            <constraint firstItem="pzo-HI-4qK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-5" id="rJ7-Hc-pzH"/>
                             <constraint firstItem="8f0-Dt-FTS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wv5-op-dhe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -91,6 +136,10 @@
                     <navigationItem key="navigationItem" title="E-COMMERCE" id="etu-g6-YNi"/>
                     <connections>
                         <outlet property="CategoryTable" destination="1VZ-Lf-4AK" id="dGa-oh-MIw"/>
+                        <outlet property="Logout" destination="ymT-o2-A2w" id="yfe-28-AZn"/>
+                        <outlet property="userName" destination="4bH-wB-dQ0" id="bdz-XI-E2v"/>
+                        <outlet property="userSV" destination="pzo-HI-4qK" id="z3h-3r-o9q"/>
+                        <outlet property="viewlogin" destination="8Oq-3P-tO7" id="vBQ-3i-fpv"/>
                         <segue destination="XPk-br-deG" kind="show" identifier="ProductsVC" id="isw-JV-ros"/>
                     </connections>
                 </viewController>
@@ -204,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sra-kR-Zye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="118"/>
+            <point key="canvasLocation" x="1244" y="567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wpb-nN-g6A">
@@ -215,7 +264,7 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.3411764705882353" green="0.15294117647058825" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.91687971353530884" green="0.46222811937332153" blue="0.13843384385108948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

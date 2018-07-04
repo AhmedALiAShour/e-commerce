@@ -12,11 +12,31 @@ class CategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     
     @IBOutlet weak var CategoryTable: UITableView!
-
+    @IBOutlet weak var userSV: UIStackView!
+    @IBOutlet weak var viewlogin: UIButton!
+    @IBOutlet weak var userName: UIButton!
+    @IBOutlet weak var Logout: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         CategoryTable.dataSource = self
         CategoryTable.delegate = self
+        let zero = 0
+        /*check user log in*/
+        let def = UserDefaults.standard
+        if def.object(forKey: "user_login")as? Int != zero {
+        if let user_login = def.object(forKey: "user_login") {
+            userSV.isHidden = false
+            viewlogin.isHidden = true
+            userName.setTitle("Username: \(user_login)", for: .normal)
+            userName.titleEdgeInsets = UIEdgeInsetsMake(2, 2, 2, 2  )
+        } else {
+            userSV.isHidden = true
+            viewlogin.isHidden = false
+            
+        }
+        }
         
     }
     
@@ -71,10 +91,31 @@ class CategoriesVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             navigationItem.backBarButtonItem = barBtn
             assert(sender as? Category != nil)
             productsVC.initProducts(category: sender as! Category)
+            
+        }
+    }
+
+    
+    @IBAction func NavigateLoginView(_ sender: UIButton) {
+        let loginVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        self.present(loginVC, animated:true, completion:nil)
+    }
+    
+    @IBAction func toggle(_ sender: Any) {
+        if Logout.isHidden == true {
+            Logout.isHidden = false
+        }
+        else{
+            Logout.isHidden = true
         }
     }
     
+    @IBAction func LogoutAction(_ sender: UIButton) {
+        UserDefaults.standard.set(false, forKey: "user_login")
+        UserDefaults.standard.synchronize()
+        userSV.isHidden = true
+        viewlogin.isHidden = false
+    }
 
-
+    
 }
-
